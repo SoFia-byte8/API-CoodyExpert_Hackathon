@@ -1,6 +1,7 @@
 const CreateOfferModel = require('../models/createOffer');
 exports.create = (req,res) => {
     if (Object.entries(req.body).length == 0) {
+
         return res.status(400).send({
             message:'Los datos son obligatorios.'
         })
@@ -13,7 +14,6 @@ exports.create = (req,res) => {
         ubicacion:req.body.ubicacion,
         termTime:req.body.termTime
     })
-
     createOffer.save().then((dataoffer) => {
         res.send(dataoffer)
     }).catch((error) => {
@@ -22,14 +22,13 @@ exports.create = (req,res) => {
         })
     })
 }
-
 exports.update = (req, res) => {
     if (Object.entries(req.body).length == 0) {
+
         return res.status(400).send({
             message: 'Los datos son obligatorios.'
         })
     }
-
     const createOffer = {
         title:req.body.title,
         description:req.body.description,
@@ -38,7 +37,6 @@ exports.update = (req, res) => {
         ubicacion:req.body.ubicacion,
         termTime:req.body.termTime
     }
-    
     CreateOfferModel.findByIdAndUpdate(req.params.id, createOffer)
         .then(
             (offerUpdate) => {
@@ -52,7 +50,6 @@ exports.update = (req, res) => {
             }
         )
 }
-
 exports.getAll = (req, res) => {
     CreateOfferModel.find()
         .then((offer) => {
@@ -63,10 +60,7 @@ exports.getAll = (req, res) => {
                 message: error.message
             })
         })
-
 }
-
-
 exports.getOne = (req, res) => {
     CreateOfferModel.findById(req.params.id)
         .then((offer) => {
@@ -78,7 +72,6 @@ exports.getOne = (req, res) => {
             })
         })
 }
-
 exports.deleteOne=(req,res)=>{
     CreateOfferModel.findByIdAndRemove(req.params.id)
     .then((offerdelete) => {
