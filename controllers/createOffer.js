@@ -8,10 +8,10 @@ exports.create = (req,res) => {
     const createOffer = new CreateOfferModel({
         title:req.body.title,
         description:req.body.description,
-        charge:req.body.charg,
+        cargo:req.body.cargo,
         salary:req.body.salary,
-        locationn:req.body.location,
-        endDate:req.body.endDate 
+        ubicacion:req.body.ubicacion,
+        termTime:req.body.termTime
     })
 
     createOffer.save().then((dataoffer) => {
@@ -33,10 +33,10 @@ exports.update = (req, res) => {
     const createOffer = {
         title:req.body.title,
         description:req.body.description,
-        charge:req.body.charg,
+        cargo:req.body.cargo,
         salary:req.body.salary,
-        locationn:req.body.location,
-        endDate:req.body.endDate 
+        ubicacion:req.body.ubicacion,
+        termTime:req.body.termTime
     }
     
     CreateOfferModel.findByIdAndUpdate(req.params.id, createOffer)
