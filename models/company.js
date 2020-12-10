@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const companySchema = new mongoose.Schema({
     nameCompany: { type: String, required: true },
     nitCompany: { type: Number, required: true },
@@ -9,6 +8,4 @@ const companySchema = new mongoose.Schema({
     role: { type: String, required: true },
     tipo: { type: String, required: true }
 })
-
-
 module.exports = mongoose.model('Company', companySchema)
