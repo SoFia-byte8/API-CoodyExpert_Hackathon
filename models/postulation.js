@@ -6,6 +6,4 @@ const postulationSchema = new mongoose.Schema({
     salary: { type: Number, required: true },
     languaje:{ type: String, required: true }
 })
-
-
 module.exports = mongoose.model('Postulation', postulationSchema)

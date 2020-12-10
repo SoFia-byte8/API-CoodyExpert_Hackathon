@@ -22,10 +22,7 @@ exports.create = (req, res) => {
         role: req.body.role,
         tipo: req.body.tipo
     })
-    
-
-
-   
+      
     company.save()// save metodo de mongoose
         .then((dataCompany) => { res.send(dataCompany) })//si hace esto bien
         .catch((error) => {//si no ejecute el cath
