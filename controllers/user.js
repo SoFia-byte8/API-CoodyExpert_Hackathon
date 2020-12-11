@@ -14,7 +14,7 @@ exports.create = (req, res) => {
         password: req.body.password,
         phone: req.body.phone,
         role: req.body.role,
-        tipo: req.body.tipo
+        type: req.body.type
     })
     user.save().then((dataUser) => {
         res.send(dataUser)
@@ -38,7 +38,7 @@ exports.update = (req, res) => {
         email: req.body.email,
         phone: req.body.phone,
         role: req.body.role,
-        tipo: req.body.tipo
+        type: req.body.type
     }
     UserModel.findByIdAndUpdate(req.params.id, user)
         .then(
