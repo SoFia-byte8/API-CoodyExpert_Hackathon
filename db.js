@@ -1,6 +1,4 @@
 const mongoose =require('mongoose');
-
-
 const config = require('./config')
 const conectDB = ()=>{
    
@@ -13,5 +11,4 @@ const conectDB = ()=>{
             }
         })
 }
-
 module.exports={conectDB} 
