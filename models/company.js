@@ -6,6 +6,6 @@ const companySchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true  },
     password: { type: String, required: true },
     role: { type: String, required: true },
-    tipo: { type: String, required: true }
+    type: { type: String, required: true }
 })
 module.exports = mongoose.model('Company', companySchema)
