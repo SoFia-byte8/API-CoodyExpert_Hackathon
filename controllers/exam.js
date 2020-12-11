@@ -54,7 +54,7 @@ exports.update = (req, res) => {
 }
 exports.getAll =(req, res) => {
     ExamModel.find()
-    .populate('companies')
+    .populate('company')
     .exec()
     .then((exams) => res.send(exams))
     .catch(
@@ -67,7 +67,7 @@ exports.getAll =(req, res) => {
 }
 exports.getOne = (req, res) => {
     ExamModel.findById(req.params.id)
-    .populate('companies')
+    .populate('company')
     .exec()
     .then((exam) => {res.send(exam)})
     .catch(
