@@ -20,7 +20,6 @@ require('./routes/company')(app)
 
 app.listen( port,()=>{
     console.log('El servidor se levando correctamente Coody')
-    
 })
 
 
