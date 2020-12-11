@@ -25,13 +25,7 @@ exports.create = (req, res) => {
                 message: error.message
 
     })
-    company.save()
-        .then((dataCompany) => { res.send(dataCompany) })
-        .catch((error) => {
-            res.status(500).send({
-                message: error.message
-            })
-        })
+})
 }
  exports.update=(req,res)=>{
     if (Object.entries(req.body).length == 0) {
