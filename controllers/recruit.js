@@ -6,9 +6,9 @@ exports.create = (req, res) => {
         })
     }
     const recruit = new RecruitModel({
-        notificar: req.body.notificar,
-        estadoPstulante: req.body.estadoPstulante,
-        procesoPostulante: req.body.procesoPostulante
+        notify: req.body.notify,
+        statusRecruit: req.body.statusRecruit,
+        processRecruit: req.body.processRecruit
     })
     recruit.save().then((dataRecruit) => {
         res.send(dataRecruit)
@@ -26,9 +26,9 @@ exports.update = (req, res) => {
         })
     }
     const recruit = {
-        notificar: req.body.notificar,
-        estadoPstulante: req.body.estadoPstulante,
-        procesoPostulante: req.body.procesoPostulante
+        notify: req.body.notify,
+        statusRecruit: req.body.statusRecruit,
+        processRecruit: req.body.processRecruit
     }    
     RecruitModel.findByIdAndUpdate(req.params.id, recruit)
         .then(

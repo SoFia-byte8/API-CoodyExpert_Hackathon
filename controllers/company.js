@@ -15,7 +15,7 @@ exports.create = (req, res) => {
         email: req.body.email,
         password:req.body.password,
         role: req.body.role,
-        tipo: req.body.tipo
+        type: req.body.type
 
     })   
     company.save()
@@ -42,7 +42,7 @@ exports.create = (req, res) => {
         email: req.body.email,
         password:req.body.password,
         role: req.body.role,
-        tipo: req.body.tipo
+        type: req.body.type
  }
  CompanyModel.findByIdAndUpdate(req.params.id, company)
         .then(
