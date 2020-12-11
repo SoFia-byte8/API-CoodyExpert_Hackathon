@@ -54,7 +54,7 @@ exports.update = (req, res) => {
 }
 exports.getAll =(req, res) => {
     ExamModel.find()
-    .populate('company')
+    .populate('company') 
     .exec()
     .then((exams) => res.send(exams))
     .catch(
