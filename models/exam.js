@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-
 const examSchema = new mongoose.Schema({
     tituloExamen: {type: String, required: true},
     descripcionExamen: {type: String, required: true},
@@ -10,5 +9,3 @@ const examSchema = new mongoose.Schema({
     empresa:{type: mongoose.Schema.Types.ObjectId, ref: 'Company'}
 })
 module.exports = mongoose.model('Exam', examSchema)
-
-

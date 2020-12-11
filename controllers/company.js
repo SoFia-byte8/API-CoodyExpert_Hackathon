@@ -16,7 +16,15 @@ exports.create = (req, res) => {
         password:req.body.password,
         role: req.body.role,
         tipo: req.body.tipo
+
     })   
+    company.save()
+        .then((dataCompany) => { res.send(dataCompany) })
+        .catch((error) => {
+            res.status(500).send({
+                message: error.message
+
+    })
     company.save()
         .then((dataCompany) => { res.send(dataCompany) })
         .catch((error) => {
