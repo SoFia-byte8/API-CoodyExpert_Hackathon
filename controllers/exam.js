@@ -7,13 +7,13 @@ exports.create = (req, res) => {
         })
     }
     const exam = new ExamModel({
-        tituloExamen: req.body.tituloExamen,
-        descripcionExamen: req.body.descripcionExamen,
-        lenguajeExamen: req.body.lenguajeExamen,
-        linkExamen: req.body.linkExamen,
-        cargo: req.body.cargo,
-        salario: req.body.salario,
-        empresa: req.body.empresa
+        examTitle: req.body.examTitle,
+        examDescription: req.body.examDescription,
+        examLanguage: req.body.examLanguage,
+        examLink: req.body.examLink,
+        job: req.body.job,
+        salary: req.body.salary,
+        company: req.body.company
     })
     exam.save()
         .then((dataExam) => { res.send(dataExam) })
@@ -31,13 +31,13 @@ exports.update = (req, res) => {
         })
     }    
     const exam = {
-        tituloExamen: req.body.tituloExamen,
-        descripcionExamen: req.body.descripcionExamen,
-        lenguajeExamen: req.body.lenguajeExamen,
-        linkExamen: req.body.linkExamen,
-        cargo: req.body.cargo,
-        salario: req.body.salario,
-        empresa: req.body.empresa
+        examTitle: req.body.examTitle,
+        examDescription: req.body.examDescription,
+        examLanguage: req.body.examLanguage,
+        examLink: req.body.examLink,
+        job: req.body.job,
+        salary: req.body.salary,
+        company: req.body.company
     }
     ExamModel.findByIdAndUpdate(req.params.id, exam, { new: true })
         .then(
