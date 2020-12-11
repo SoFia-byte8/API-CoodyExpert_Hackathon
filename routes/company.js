@@ -1,4 +1,4 @@
-module.exports = (app) => {//Exportar una funcion //recibimos el parametro app
+module.exports = (app) => {
     const company = require('../controllers/company')
     const isAuth= require('../middleware/authCompany')
     app.post('/company/create', company.create)
