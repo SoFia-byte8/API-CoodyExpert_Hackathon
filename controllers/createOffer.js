@@ -9,10 +9,10 @@ exports.create = (req,res) => {
     const createOffer = new CreateOfferModel({
         title:req.body.title,
         description:req.body.description,
-        cargo:req.body.cargo,
+        position:req.body.position,
         salary:req.body.salary,
-        ubicacion:req.body.ubicacion,
-        termTime:req.body.termTime
+        location:req.body.location,
+        endDate:req.body.endDate
     })
     createOffer.save().then((dataoffer) => {
         res.send(dataoffer)
@@ -32,10 +32,10 @@ exports.update = (req, res) => {
     const createOffer = {
         title:req.body.title,
         description:req.body.description,
-        cargo:req.body.cargo,
+        position:req.body.position,
         salary:req.body.salary,
-        ubicacion:req.body.ubicacion,
-        termTime:req.body.termTime
+        location:req.body.location,
+        endDate:req.body.endDate
     }
     CreateOfferModel.findByIdAndUpdate(req.params.id, createOffer)
         .then(

@@ -32,7 +32,6 @@ exports.decodeToken = (token) => {
                 status: 500,
                 message: 'El Token es invalido'
             })
-
         }
     })
 
